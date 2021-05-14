@@ -22,7 +22,8 @@ fi
 # Sign zones
 for domain in $(ls /zones)
 do
-    echo "add $domain fromprimary" >> /var/db/nsd/zones.list
+    echo "adding $domain to NSD zone.list file"
+    echo "add $domain fromprimary" >> /var/db/nsd/zone.list
     if [ -e "/keys/K$domain.ksk.private" ] && [ -e "/keys/K$domain.zsk.private" ]
     then
         signzone "$domain"
