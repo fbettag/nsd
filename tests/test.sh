@@ -5,6 +5,7 @@ set -euxo pipefail
 CONTAINER_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' nsd)
 
 # check zone
+docker exec /usr/local/bin/init.sh
 docker exec grep -q "add example.org fromprimary" /var/db/nsd/zone.list
 docker exec nsd nsd-checkzone example.org /zones/example.org | grep -q "zone example.org is ok"
 
