@@ -1,7 +1,6 @@
-
 # Run on Kubernetes
 
-NSD can be run on Kubernetes.
+Example for how running nsd on kubernetes.
 
 ## Secrets
 
